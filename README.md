@@ -46,3 +46,4 @@ npx prisma studio
 pnpm start:dev
 
 ### Next.js 起動
+pnpm dev
