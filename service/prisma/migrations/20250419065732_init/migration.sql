@@ -1,7 +1,9 @@
 -- CreateTable
 CREATE TABLE "Employee" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "team" TEXT NOT NULL,
-    "memo" TEXT
+    "memo" TEXT,
+
+    CONSTRAINT "Employee_pkey" PRIMARY KEY ("id")
 );

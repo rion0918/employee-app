@@ -9,8 +9,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql" // ← SQLite から必ず変更！
+  url      = env("DATABASE_URL")
 }
 
 model Employee {
