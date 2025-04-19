@@ -1,12 +1,12 @@
 # 社員情報管理アプリケーション（Next.js + NestJS + GraphQL + Prisma）
 
 ## ✅ 概要
-このアプリケーションは、社員情報を管理するためのWebアプリです。  
-以下の技術スタックを使用して構築されています：
+社員情報を管理システム
+以下の技術スタックを使用
 
 - フロントエンド：Next.js
 - バックエンド：NestJS（GraphQL）
-- ORM：Prisma（SQLite）
+- ORM：Prisma（postgresql）
 - デプロイ先：Vercel（フロント）、Render（バックエンド）
 
 ## ✅ 主な機能
@@ -21,7 +21,7 @@
 |------|------------|
 | フロント | Next.js / TypeScript / Apollo Client |
 | バックエンド | NestJS / GraphQL（コードファースト） |
-| データベース | Prisma（SQLite） |
+| データベース | Prisma（postgresql） |
 | デプロイ | Vercel（フロント） / Render（バックエンド） |
 
 ## ✅ アクセス方法
