@@ -1,7 +1,21 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+const httpLink = createHttpLink({
+  uri: 'https://employee-app-service.onrender.com/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      'x-apollo-operation-name': 'default-operation',
+    },
+  };
+});
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql', // NestJSのGraphQLエンドポイント
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
