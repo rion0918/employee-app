@@ -3,18 +3,17 @@ import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
   uri: 'https://employee-app-service.onrender.com/graphql',
-  fetchOptions: {
-    mode: 'cors',
-  },
 });
 
-// ✅ ここを追加・修正
-const authLink = setContext((_, { headers }) => ({
-  headers: {
-    ...headers,
-    'x-apollo-operation-name': 'default-op', // 空じゃなければOK
-  },
-}));
+const authLink = setContext((_, { headers }) => {
+  return {
+    headers: {
+      ...headers,
+      'content-type': 'application/json', // ★追加
+      'x-apollo-operation-name': 'default-op', // ★Apollo対策用ヘッダー
+    },
+  };
+});
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
