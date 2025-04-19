@@ -105,7 +105,7 @@ export default function Home() {
   ).map((emp: Employee) => (
           <div
             key={emp.id}
-            className="bg-white shadow-md hover:shadow-lg transition-all rounded-lg p-4 border border-gray-200"
+            className="bg-white rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-transform p-6 border border-gray-100"
           >
             <h2 className="text-lg font-semibold">{emp.name}</h2>
             <p className="text-gray-600">{emp.team}</p>
